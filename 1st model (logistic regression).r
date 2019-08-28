@@ -1,8 +1,11 @@
-data <- read.csv("./datafiles/shot.csv",head=TRUE,sep=",");
+setwd("/home/vibhu/Documents/College_Stuff/3rd year/5th sem/Minor_Stufff/Cricket_Shot_Commentry")
+data <- read.csv("./finaldata.ods",head=TRUE,sep=",");
 library(caTools)
 split=sample.split(data,SplitRatio = 0.8)
 training <- subset(data, split== TRUE)
 testing <- subset(data ,split == FALSE)
+
+print(head(training))
 
 model=glm(shotType~. -score -nose.score -leftEye.score -rightEye.score -leftEar.score
                      -rightEar.score -leftShoulder.score-rightShoulder.score-leftElbow.score
