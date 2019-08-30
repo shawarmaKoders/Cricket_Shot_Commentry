@@ -1,0 +1,49 @@
+# weights:  216 (175 variable)
+initial  value 2583.717155 
+iter  10 value 2130.589455
+iter  20 value 2008.215970
+iter  30 value 2002.824904
+iter  40 value 2001.352757
+iter  50 value 2000.381918
+iter  60 value 1996.953747
+iter  70 value 1939.086892
+iter  80 value 1920.426719
+iter  90 value 1919.744380
+iter 100 value 1868.573367
+final  value 1868.573367 
+stopped after 100 iterations
+ 1  2  3  4  5  6 
+41 71 51 91 77 46 
+Confusion Matrix and Statistics
+
+          Reference
+Prediction  1  2  3  4  5  6
+         1 18 14  3 14 12  2
+         2  3 34  6 12  7  7
+         3  4  3 25  3  4  3
+         4  4  2  2 50 10  7
+         5  6  2 11  6 41  5
+         6  6 16  4  6  3 22
+
+Overall Statistics
+                                          
+               Accuracy : 0.504           
+                 95% CI : (0.4523, 0.5556)
+    No Information Rate : 0.2414          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.4005          
+                                          
+ Mcnemar's Test P-Value : 0.001524        
+
+Statistics by Class:
+
+                     Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6
+Sensitivity           0.43902  0.47887  0.49020   0.5495   0.5325  0.47826
+Specificity           0.86607  0.88562  0.94785   0.9126   0.9000  0.89426
+Pos Pred Value        0.28571  0.49275  0.59524   0.6667   0.5775  0.38596
+Neg Pred Value        0.92675  0.87987  0.92239   0.8642   0.8824  0.92500
+Prevalence            0.10875  0.18833  0.13528   0.2414   0.2042  0.12202
+Detection Rate        0.04775  0.09019  0.06631   0.1326   0.1088  0.05836
+Detection Prevalence  0.16711  0.18302  0.11141   0.1989   0.1883  0.15119
+Balanced Accuracy     0.65255  0.68225  0.71902   0.7310   0.7162  0.68626
