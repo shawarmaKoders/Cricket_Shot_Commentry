@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <!-- Load TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <!-- Load Posenet -->
+    <script src="https://unpkg.com/@tensorflow-models/posenet">
+    </script>
+    <script src="./tensor.js"></script>
+    <script type="text/javascript">
+      posenet.load().then(function(net) {
+        console.log("loaded");
+        
+      });
+    </script>
+
+    <img src="./Screenshot from 2019-08-11 12-50-01.png" alt="bat" id ="first">
+  </body>
+</html>
