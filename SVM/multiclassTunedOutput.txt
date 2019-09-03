@@ -1,0 +1,65 @@
+
+Call:
+svm(formula = shotType ~ ., data = training, method = "C-classification", 
+    kernal = "radial", gamma = 0.1, cost = 10)
+
+
+Parameters:
+   SVM-Type:  C-classification 
+ SVM-Kernel:  radial 
+       cost:  10 
+
+Number of Support Vectors:  1708
+
+ ( 311 317 297 191 278 314 )
+
+
+Number of Classes:  6 
+
+Levels: 
+ cover cut leg pull scoop straight
+
+
+
+Confusion Matrix and Statistics
+
+          
+pred       cover cut leg pull scoop straight
+  cover       61   8  10    7     5        5
+  cut         12  65   9    7    13       21
+  leg          0   0  56    6     4        4
+  pull         3   0   1   15     0        1
+  scoop        4   4   5    4    60        3
+  straight     7   3   4    8     3       47
+
+Overall Statistics
+                                         
+               Accuracy : 0.6538         
+                 95% CI : (0.6086, 0.697)
+    No Information Rate : 0.1871         
+    P-Value [Acc > NIR] : < 2.2e-16      
+                                         
+                  Kappa : 0.5799         
+                                         
+ Mcnemar's Test P-Value : 2.297e-07      
+
+Statistics by Class:
+
+                     Class: cover Class: cut Class: leg Class: pull
+Sensitivity                0.7011     0.8125     0.6588     0.31915
+Specificity                0.9074     0.8390     0.9632     0.98804
+Pos Pred Value             0.6354     0.5118     0.8000     0.75000
+Neg Pred Value             0.9295     0.9556     0.9266     0.92809
+Prevalence                 0.1871     0.1720     0.1828     0.10108
+Detection Rate             0.1312     0.1398     0.1204     0.03226
+Detection Prevalence       0.2065     0.2731     0.1505     0.04301
+Balanced Accuracy          0.8043     0.8257     0.8110     0.65359
+                     Class: scoop Class: straight
+Sensitivity                0.7059          0.5802
+Specificity                0.9474          0.9349
+Pos Pred Value             0.7500          0.6528
+Neg Pred Value             0.9351          0.9135
+Prevalence                 0.1828          0.1742
+Detection Rate             0.1290          0.1011
+Detection Prevalence       0.1720          0.1548
+Balanced Accuracy          0.8266          0.7576

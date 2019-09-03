@@ -1,10 +1,12 @@
-dibaet <- read.csv("./datafiles/shot.csv")
+set.seed(2322)
+data <- read.csv("./datafiles/shot.csv")
+
 library(caTools)
-split= sample.split(dibaet,SplitRatio=0.7)
+split= sample.split(data,SplitRatio=0.7)
 
-training <- subset(dibaet, split==TRUE)
+training <- subset(data, split==TRUE)
 
-testing <- subset(dibaet,split==FALSE)
+testing <- subset(data,split==FALSE)
 
 library(randomForest)
 training$shotType <- as.factor(training$shotType)
