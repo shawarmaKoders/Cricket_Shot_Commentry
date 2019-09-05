@@ -1,6 +1,6 @@
 library(caret)
 library(e1071)
-data <- read.csv("./../shot.csv",sep=",",header = T)
+data <- read.csv("./shot.csv",sep=",",header = T)
 
 library(caTools)
 

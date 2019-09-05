@@ -1,5 +1,6 @@
-data <-read.csv("./../shot.csv")
+data <-read.csv("./shot1.csv")
 # removing values with -ve coordinates accuracy increased by almost 5%
+head
 data2 <- data[1:52]
 data2[data2 <0] <- NA
 data2[53]<- data[53]

@@ -1,5 +1,4 @@
-set.seed(2322)
-data <- read.csv("./datafiles/shot.csv")
+data <- read.csv("./shot.csv")
 
 library(caTools)
 split= sample.split(data,SplitRatio=0.7)
@@ -7,7 +6,7 @@ split= sample.split(data,SplitRatio=0.7)
 training <- subset(data, split==TRUE)
 
 testing <- subset(data,split==FALSE)
-
+  
 library(randomForest)
 training$shotType <- as.factor(training$shotType)
 
