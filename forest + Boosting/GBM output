@@ -1,0 +1,86 @@
+                                    var   rel.inf
+rightEye.x                   rightEye.x 3.3488654
+rightWrist.x               rightWrist.x 3.1621548
+leftShoulder.score   leftShoulder.score 2.9281746
+rightWrist.y               rightWrist.y 2.8405886
+leftHip.x                     leftHip.x 2.7368295
+leftEye.x                     leftEye.x 2.7183447
+rightEar.x                   rightEar.x 2.6927911
+leftKnee.x                   leftKnee.x 2.6712799
+rightShoulder.x         rightShoulder.x 2.5924912
+rightHip.x                   rightHip.x 2.5826922
+rightKnee.x                 rightKnee.x 2.5272734
+rightAnkle.y               rightAnkle.y 2.4634547
+leftKnee.y                   leftKnee.y 2.3728625
+leftEar.x                     leftEar.x 2.3656423
+rightElbow.x               rightElbow.x 2.3093936
+leftAnkle.y                 leftAnkle.y 2.2788652
+leftWrist.x                 leftWrist.x 2.2700713
+leftWrist.y                 leftWrist.y 2.2063731
+leftShoulder.y           leftShoulder.y 2.1514428
+leftShoulder.x           leftShoulder.x 2.0842538
+rightEar.score           rightEar.score 2.0673829
+rightKnee.y                 rightKnee.y 2.0187049
+rightEye.score           rightEye.score 1.9711523
+leftEye.score             leftEye.score 1.9361374
+rightKnee.score         rightKnee.score 1.9243311
+leftAnkle.score         leftAnkle.score 1.8927005
+leftEar.score             leftEar.score 1.8395960
+leftEye.y                     leftEye.y 1.7135014
+leftElbow.x                 leftElbow.x 1.7079561
+rightElbow.y               rightElbow.y 1.6940702
+leftAnkle.x                 leftAnkle.x 1.6904454
+rightShoulder.score rightShoulder.score 1.6595479
+rightAnkle.score       rightAnkle.score 1.6416830
+nose.x                           nose.x 1.6356062
+leftElbow.score         leftElbow.score 1.5398454
+rightAnkle.x               rightAnkle.x 1.4932785
+leftElbow.y                 leftElbow.y 1.4903949
+rightWrist.score       rightWrist.score 1.4723900
+leftWrist.score         leftWrist.score 1.4602604
+rightHip.y                   rightHip.y 1.4080190
+rightShoulder.y         rightShoulder.y 1.4065324
+leftHip.y                     leftHip.y 1.3950498
+leftHip.score             leftHip.score 1.3166143
+leftKnee.score           leftKnee.score 1.3071524
+rightEar.y                   rightEar.y 1.2454345
+leftEar.y                     leftEar.y 1.1829888
+nose.y                           nose.y 1.1580592
+rightEye.y                   rightEye.y 1.1552026
+rightElbow.score       rightElbow.score 1.1217415
+rightHip.score           rightHip.score 1.0929719
+nose.score                   nose.score 1.0741646
+score                             score 0.9832399
+Confusion Matrix and Statistics
+
+          Reference
+Prediction cover cut leg pull scoop straight
+  cover       51   8   3    3     3       19
+  cut          8  53   1    2     5       10
+  leg          4   6  61    5     8        3
+  pull         2   5   4   24     3        8
+  scoop        8   4   6    2    62        4
+  straight     5   8   8    4     3       52
+
+Overall Statistics
+                                          
+               Accuracy : 0.6516          
+                 95% CI : (0.6064, 0.6949)
+    No Information Rate : 0.2065          
+    P-Value [Acc > NIR] : <2e-16          
+                                          
+                  Kappa : 0.5788          
+                                          
+ Mcnemar's Test P-Value : 0.1601          
+
+Statistics by Class:
+
+                     Class: cover Class: cut Class: leg Class: pull Class: scoop Class: straight
+Sensitivity                0.6538     0.6310     0.7349     0.60000       0.7381          0.5417
+Specificity                0.9070     0.9318     0.9319     0.94824       0.9370          0.9241
+Pos Pred Value             0.5862     0.6709     0.7011     0.52174       0.7209          0.6500
+Neg Pred Value             0.9286     0.9197     0.9418     0.96181       0.9420          0.8857
+Prevalence                 0.1677     0.1806     0.1785     0.08602       0.1806          0.2065
+Detection Rate             0.1097     0.1140     0.1312     0.05161       0.1333          0.1118
+Detection Prevalence       0.1871     0.1699     0.1871     0.09892       0.1849          0.1720
+Balanced Accuracy          0.7804     0.7814     0.8334     0.77412       0.8376          0.7329
