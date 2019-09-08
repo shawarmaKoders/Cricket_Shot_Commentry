@@ -1,0 +1,58 @@
+# weights:  216 (175 variable)
+initial  value 3185.748336 
+iter  10 value 2742.311451
+iter  20 value 2646.837105
+iter  30 value 2644.473197
+iter  40 value 2644.221946
+iter  50 value 2640.027529
+iter  60 value 2601.048335
+iter  70 value 2600.376994
+iter  80 value 2598.748713
+iter  90 value 2559.940568
+iter 100 value 2559.468839
+final  value 2559.468839 
+stopped after 100 iterations
+   cover      cut      leg     pull    scoop straight 
+      96       63       86       53      108       58 
+Confusion Matrix and Statistics
+
+          Reference
+Prediction cover cut leg pull scoop straight
+  cover       38  12   9    1    15        7
+  cut         15  25   9   10    15       10
+  leg         10   6  42    9     8        7
+  pull         8   2   7   24     7        3
+  scoop        7   5  10    4    52        3
+  straight    18  13   9    5    11       28
+
+Overall Statistics
+                                         
+               Accuracy : 0.4504         
+                 95% CI : (0.4045, 0.497)
+    No Information Rate : 0.2328         
+    P-Value [Acc > NIR] : < 2.2e-16      
+                                         
+                  Kappa : 0.3381         
+                                         
+ Mcnemar's Test P-Value : 0.007488       
+
+Statistics by Class:
+
+                     Class: cover Class: cut Class: leg Class: pull
+Sensitivity                0.3958    0.39683    0.48837     0.45283
+Specificity                0.8804    0.85287    0.89418     0.93431
+Pos Pred Value             0.4634    0.29762    0.51220     0.47059
+Neg Pred Value             0.8482    0.90000    0.88482     0.92978
+Prevalence                 0.2069    0.13578    0.18534     0.11422
+Detection Rate             0.0819    0.05388    0.09052     0.05172
+Detection Prevalence       0.1767    0.18103    0.17672     0.10991
+Balanced Accuracy          0.6381    0.62485    0.69128     0.69357
+                     Class: scoop Class: straight
+Sensitivity                0.4815         0.48276
+Specificity                0.9185         0.86207
+Pos Pred Value             0.6420         0.33333
+Neg Pred Value             0.8538         0.92105
+Prevalence                 0.2328         0.12500
+Detection Rate             0.1121         0.06034
+Detection Prevalence       0.1746         0.18103
+Balanced Accuracy          0.7000         0.67241
