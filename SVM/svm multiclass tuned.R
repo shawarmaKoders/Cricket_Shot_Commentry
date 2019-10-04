@@ -1,6 +1,7 @@
 library(caret)
 library(e1071)
-data <- read.csv("./shot.csv",sep=",",header = T)
+set.seed(230)
+data <- read.csv("./shot 2.csv",sep=",",header = T)
 
 library(caTools)
 

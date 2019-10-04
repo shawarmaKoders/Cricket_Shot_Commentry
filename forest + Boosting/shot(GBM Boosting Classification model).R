@@ -1,4 +1,5 @@
-data<- read.csv("./datafiles/shot.csv")
+set.seed(200)
+data<- read.csv("./../shot 2.csv")
 print("This would take 5 to 10 Minutes. Please Be patient")
 library(caTools)
 library(gbm)

@@ -1,5 +1,5 @@
 
-data <- read.csv("./datafiles/shot.csv",head=TRUE,sep=",");
+data <- read.csv("./shot 2.csv",head=TRUE,sep=",");
 data2 <- data[1:52]
 data2[data2 <0] <- NA
 data2[53]<- data[53]

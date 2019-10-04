@@ -1,4 +1,9 @@
-data <- read.csv("./shot.csv")
+data <- read.csv("./../shot 2.csv")
+data2 <- data[1:52]
+data2[data2 <0] <- NA
+data2[53]<- data[53]
+data2= na.omit(data2)
+data<- data2
 
 library(caTools)
 split= sample.split(data,SplitRatio=0.7)
