@@ -1,4 +1,4 @@
-data <- read.csv("./../shot 2.csv")
+data <- read.csv("./cut_removed.csv")
 data2 <- data[1:52]
 data2[data2 <0] <- NA
 data2[53]<- data[53]

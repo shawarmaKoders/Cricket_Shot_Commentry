@@ -1,8 +1,7 @@
 library(caret)
 library(e1071)
-set.seed(230)
-data <- read.csv("./shot 2.csv",sep=",",header = T)
-
+data <- read.csv("./cut_removed.csv",sep=",",header = T)
+set.seed(2301)
 library(caTools)
 
 split <- sample.split(data,SplitRatio = 0.8)
