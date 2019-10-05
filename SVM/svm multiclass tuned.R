@@ -1,6 +1,7 @@
 library(caret)
 library(e1071)
-arr=c("./cover.csv","./cut.csv","./straight.csv")
+arr=c("./../datafiles/cover.csv","./../datafiles/straight.csv","./../datafiles/scoop.csv","./../datafiles/pull.csv","./../datafiles/leg.csv");
+
 data <- read.csv(arr[1])
 for (i in arr[-1] )
 {

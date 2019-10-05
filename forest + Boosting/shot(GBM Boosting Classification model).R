@@ -1,4 +1,4 @@
-arr=c("./leg.csv","./pull.csv","./scoop.csv","straight.csv","./cover.csv")
+arr=c("./../datafiles/leg.csv","./../datafiles/pull.csv","./../datafiles/scoop.csv","./../datafiles/straight.csv","./../datafiles/cover.csv")
 data <- read.csv(arr[1])
 par(mar=c(1,1,1,1))
 for (i in arr[-1] )
