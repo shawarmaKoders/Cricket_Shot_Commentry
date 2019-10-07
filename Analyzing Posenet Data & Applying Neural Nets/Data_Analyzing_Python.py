@@ -6,6 +6,8 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+from sklearn.metrics import accuracy_score
+
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
@@ -107,7 +109,10 @@ def main(filename='finaldata.csv', batch_size=10, epochs=100, test_size=0.2):
 	eval_model = get_model_evaluation(classifier, X_train, y_train)
 	y_pred = get_predictions_on_test_data(classifier, X_test)
 	cm = get_confusion_matrix(y_test, y_pred)
+	print('Accuracy:', accuracy_score(y_test, y_pred))
+	print(cm)
+	cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
 	print(cm)
 
 
-main(filename='finaldata.csv', batch_size=10, epochs=100, test_size=0.2)
+main(filename='finaldata.csv', batch_size=5, epochs=250, test_size=0.1)

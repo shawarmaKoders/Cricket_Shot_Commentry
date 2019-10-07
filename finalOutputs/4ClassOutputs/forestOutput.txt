@@ -1,0 +1,34 @@
+mtry = 7  OOB error = 5.18% 
+Searching left ...
+Searching right ...
+Confusion Matrix and Statistics
+
+          
+pred       leg pull scoop straight
+  leg       94   14    14       19
+  pull       2   28     2        2
+  scoop      9    8    86        4
+  straight  16   22    18       95
+
+Overall Statistics
+                                          
+               Accuracy : 0.6998          
+                 95% CI : (0.6542, 0.7426)
+    No Information Rate : 0.2794          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.5892          
+                                          
+ Mcnemar's Test P-Value : 5.66e-07        
+
+Statistics by Class:
+
+                     Class: leg Class: pull Class: scoop Class: straight
+Sensitivity              0.7769     0.38889       0.7167          0.7917
+Specificity              0.8494     0.98338       0.9329          0.8211
+Pos Pred Value           0.6667     0.82353       0.8037          0.6291
+Neg Pred Value           0.9075     0.88972       0.8957          0.9113
+Prevalence               0.2794     0.16628       0.2771          0.2771
+Detection Rate           0.2171     0.06467       0.1986          0.2194
+Detection Prevalence     0.3256     0.07852       0.2471          0.3487
+Balanced Accuracy        0.8131     0.68613       0.8248          0.8064

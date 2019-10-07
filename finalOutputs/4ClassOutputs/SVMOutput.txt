@@ -1,0 +1,54 @@
+
+Call:
+svm(formula = shotType ~ ., data = training, method = "C-classification", 
+    kernal = "radial", gamma = 0.1, cost = 10)
+
+
+Parameters:
+   SVM-Type:  C-classification 
+ SVM-Kernel:  radial 
+       cost:  10 
+
+Number of Support Vectors:  1064
+
+ ( 291 186 277 310 )
+
+
+Number of Classes:  4 
+
+Levels: 
+ leg pull scoop straight
+
+
+
+Confusion Matrix and Statistics
+
+          
+pred       leg pull scoop straight
+  leg       58    6     8        4
+  pull       4   23     6        0
+  scoop      3    6    56        3
+  straight  15   17    11       77
+
+Overall Statistics
+                                          
+               Accuracy : 0.7205          
+                 95% CI : (0.6658, 0.7708)
+    No Information Rate : 0.2828          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.6197          
+                                          
+ Mcnemar's Test P-Value : 3.005e-05       
+
+Statistics by Class:
+
+                     Class: leg Class: pull Class: scoop Class: straight
+Sensitivity              0.7250     0.44231       0.6914          0.9167
+Specificity              0.9171     0.95918       0.9444          0.7981
+Pos Pred Value           0.7632     0.69697       0.8235          0.6417
+Neg Pred Value           0.9005     0.89015       0.8908          0.9605
+Prevalence               0.2694     0.17508       0.2727          0.2828
+Detection Rate           0.1953     0.07744       0.1886          0.2593
+Detection Prevalence     0.2559     0.11111       0.2290          0.4040
+Balanced Accuracy        0.8210     0.70075       0.8179          0.8574

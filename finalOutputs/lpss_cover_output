@@ -1,0 +1,85 @@
+                                    var   rel.inf
+rightWrist.x               rightWrist.x 3.9004397
+rightHip.x                   rightHip.x 3.8918324
+leftWrist.y                 leftWrist.y 3.1252502
+rightKnee.x                 rightKnee.x 3.0768059
+leftKnee.x                   leftKnee.x 2.9786224
+leftShoulder.x           leftShoulder.x 2.9394655
+rightWrist.y               rightWrist.y 2.8528775
+rightEar.score           rightEar.score 2.8231619
+leftWrist.x                 leftWrist.x 2.7566386
+leftHip.x                     leftHip.x 2.7467609
+leftShoulder.score   leftShoulder.score 2.6870356
+rightEar.x                   rightEar.x 2.6447734
+rightShoulder.score rightShoulder.score 2.6372427
+leftKnee.y                   leftKnee.y 2.6172974
+leftEye.score             leftEye.score 2.3568648
+rightKnee.y                 rightKnee.y 2.3411585
+leftEar.x                     leftEar.x 2.3157613
+leftShoulder.y           leftShoulder.y 2.3075927
+leftAnkle.y                 leftAnkle.y 2.2819543
+rightKnee.score         rightKnee.score 2.1474346
+rightAnkle.y               rightAnkle.y 2.1112633
+leftAnkle.x                 leftAnkle.x 2.0958722
+rightAnkle.x               rightAnkle.x 2.0659160
+rightEye.score           rightEye.score 2.0287274
+rightShoulder.x         rightShoulder.x 1.9904750
+leftElbow.y                 leftElbow.y 1.7668902
+rightWrist.score       rightWrist.score 1.7361800
+leftWrist.score         leftWrist.score 1.7248909
+rightElbow.y               rightElbow.y 1.6000200
+leftEar.score             leftEar.score 1.5322670
+rightHip.score           rightHip.score 1.4545221
+rightHip.y                   rightHip.y 1.4407885
+leftKnee.score           leftKnee.score 1.4387814
+leftHip.y                     leftHip.y 1.4358387
+rightAnkle.score       rightAnkle.score 1.4346792
+leftElbow.x                 leftElbow.x 1.3695970
+leftEar.y                     leftEar.y 1.2966495
+leftAnkle.score         leftAnkle.score 1.2646176
+leftEye.x                     leftEye.x 1.1514044
+nose.x                           nose.x 1.1507152
+leftElbow.score         leftElbow.score 1.1454116
+rightEye.y                   rightEye.y 1.1388661
+nose.y                           nose.y 1.1108002
+rightElbow.x               rightElbow.x 1.1066221
+leftHip.score             leftHip.score 1.0798653
+rightElbow.score       rightElbow.score 1.0762597
+rightEar.y                   rightEar.y 1.0711056
+nose.score                   nose.score 1.0478740
+rightEye.x                   rightEye.x 1.0292281
+leftEye.y                     leftEye.y 0.9812461
+score                             score 0.8716385
+rightShoulder.y         rightShoulder.y 0.8220167
+Confusion Matrix and Statistics
+
+          Reference
+Prediction cover leg pull scoop straight
+  cover       64   4    0     4       11
+  leg          4  72    4     3        6
+  pull         3   3   32     8        6
+  scoop        5  11    0    75        1
+  straight     8   4    5     6       59
+
+Overall Statistics
+                                       
+               Accuracy : 0.7588       
+                 95% CI : (0.7137, 0.8)
+    No Information Rate : 0.2412       
+    P-Value [Acc > NIR] : < 2e-16      
+                                       
+                  Kappa : 0.6951       
+                                       
+ Mcnemar's Test P-Value : 0.02601      
+
+Statistics by Class:
+
+                     Class: cover Class: leg Class: pull Class: scoop Class: straight
+Sensitivity                0.7619     0.7660      0.7805       0.7812          0.7108
+Specificity                0.9395     0.9441      0.9440       0.9437          0.9270
+Pos Pred Value             0.7711     0.8090      0.6154       0.8152          0.7195
+Neg Pred Value             0.9365     0.9288      0.9740       0.9314          0.9241
+Prevalence                 0.2111     0.2362      0.1030       0.2412          0.2085
+Detection Rate             0.1608     0.1809      0.0804       0.1884          0.1482
+Detection Prevalence       0.2085     0.2236      0.1307       0.2312          0.2060
+Balanced Accuracy          0.8507     0.8550      0.8622       0.8625          0.8189
