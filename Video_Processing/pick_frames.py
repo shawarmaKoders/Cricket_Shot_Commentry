@@ -1,17 +1,55 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture('filename.mp4')
+shotType = 'straight'
+for video_number in range(1, 30):
+    print('------------------------------------------')
+    print('------------------------------------------')
+    video_file = f'clips/{shotType}/{shotType}{video_number}.mp4'
+    print(video_file)
 
-while(cap.isOpened()):
-    ret, frame = cap.read()
+    video = cv2.VideoCapture(video_file)
 
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    video_frames = video.get(cv2.CAP_PROP_FRAME_COUNT)
+    print("Total Frames:", video_frames)
 
-    cv2.imshow('Shot Name', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        print(frame.shape)
-        break
+    video_fps = video.get(cv2.CAP_PROP_FPS)
+    print(f'FPS: {video_fps}')
 
-cap.release()
-cv2.destroyAllWindows()
+    video_duration = video_frames / video_fps
+    print(f'Duration: {video_duration}s')
+
+    video_height = video.get(cv2.CAP_PROP_FRAME_HEIGHT)
+    video_width = video.get(cv2.CAP_PROP_FRAME_WIDTH)
+    print(f'Height x Width: {video_height} x {video_width}')
+
+    FPS_REDUCE_FACTOR = 0.2
+    fps_delta = int(video_fps * FPS_REDUCE_FACTOR)
+
+    print()
+
+    total_frames_processed = 0
+
+    while video.isOpened():
+        current_frame_position = int(video.get(cv2.CAP_PROP_POS_FRAMES))
+        print('Frame Number:', current_frame_position)
+        ret, frame = video.read()
+
+        if frame is None:
+            break
+
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+        cv2.imshow(f'{shotType}', gray)
+        total_frames_processed += 1
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            print(frame.shape)
+            break
+
+        video.set(cv2.CAP_PROP_POS_FRAMES, current_frame_position + fps_delta)
+
+    print('Total Frames Processed:', total_frames_processed)
+
+    video.release()
+    cv2.destroyAllWindows()
