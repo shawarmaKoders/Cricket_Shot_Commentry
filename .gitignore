@@ -101,7 +101,7 @@ venv.bak/
 /site
 .Rhistory
 .RHistory
-**/RData
+**/.RData
 # mypy
 .mypy_cache/
 
