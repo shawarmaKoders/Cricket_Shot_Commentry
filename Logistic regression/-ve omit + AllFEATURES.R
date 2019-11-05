@@ -1,5 +1,12 @@
 
-data <- read.csv("./datafiles/shot.csv",head=TRUE,sep=",");
+arr=c("./cut.csv","./cover.csv","./leg.csv","./pull.csv","./scoop.csv","./straight.csv")
+data <- read.csv(arr[1])
+for (i in arr[-1] )
+  {
+  data2 <- read.csv(i,head=TRUE,sep=",");
+  data <- rbind(data,data2);
+}
+
 data2 <- data[1:52]
 data2[data2 <0] <- NA
 data2[53]<- data[53]

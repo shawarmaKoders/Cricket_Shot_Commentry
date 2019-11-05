@@ -1,7 +1,23 @@
 library(caret)
 library(e1071)
-data <- read.csv("./shot.csv",sep=",",header = T)
+arr=c("./../datafiles/cover.csv","./../datafiles/straight.csv","./../datafiles/scoop.csv","./../datafiles/pull.csv","./../datafiles/leg.csv");
 
+data <- read.csv(arr[1])
+for (i in arr[-1] )
+{
+  data2 <- read.csv(i,head=TRUE,sep=",");
+  data <- rbind(data,data2);
+}
+set.seed(189)
+##code to omit all entries with negative valu
+#data <- read.csv("old_shot.csv",sep = ",",header = T)
+data2 <- data[1:52]
+data2[data2 <0] <- NA
+data2[53]<- data[53]
+data2= na.omit(data2)
+data<- data2
+
+#set.seed(2301)
 library(caTools)
 
 split <- sample.split(data,SplitRatio = 0.8)

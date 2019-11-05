@@ -26,7 +26,7 @@ arr=['cover','cut','leg',"pull","scoop","straight"]
 list={}
 //for (i=0;i<6;i++)
 //{
-  testFolder="./data/training/"+arr[4];
+  testFolder="./data/";
   final=[];
   fs.readdir(testFolder, (err, files) => {
     files.forEach(file => {

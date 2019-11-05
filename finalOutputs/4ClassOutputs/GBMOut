@@ -1,0 +1,86 @@
+[1] "This would take 5 to 10 Minutes. Please Be patient"
+                                    var   rel.inf
+leftAnkle.y                 leftAnkle.y 4.1088794
+rightWrist.y               rightWrist.y 3.5892461
+leftShoulder.score   leftShoulder.score 3.4920641
+leftHip.x                     leftHip.x 3.3364304
+leftKnee.x                   leftKnee.x 3.1876278
+leftKnee.y                   leftKnee.y 3.1873440
+rightKnee.y                 rightKnee.y 3.0712915
+leftShoulder.y           leftShoulder.y 2.7271431
+leftWrist.y                 leftWrist.y 2.5888124
+rightAnkle.y               rightAnkle.y 2.5820348
+rightKnee.x                 rightKnee.x 2.4122108
+rightEar.score           rightEar.score 2.2515302
+leftEar.x                     leftEar.x 2.2232993
+leftShoulder.x           leftShoulder.x 2.1711631
+rightShoulder.x         rightShoulder.x 2.1662736
+rightWrist.x               rightWrist.x 2.1146706
+leftElbow.y                 leftElbow.y 2.1121550
+rightKnee.score         rightKnee.score 2.0817918
+leftEye.x                     leftEye.x 2.0778327
+rightElbow.y               rightElbow.y 2.0501697
+leftEye.score             leftEye.score 2.0367491
+rightEar.x                   rightEar.x 2.0164085
+nose.x                           nose.x 1.9454099
+rightHip.x                   rightHip.x 1.9131776
+rightWrist.score       rightWrist.score 1.8593004
+rightAnkle.x               rightAnkle.x 1.7407149
+leftElbow.x                 leftElbow.x 1.6684300
+rightEye.x                   rightEye.x 1.6136423
+rightEar.y                   rightEar.y 1.5932800
+leftAnkle.x                 leftAnkle.x 1.5855587
+leftElbow.score         leftElbow.score 1.5803383
+leftWrist.x                 leftWrist.x 1.5735720
+rightEye.y                   rightEye.y 1.5472596
+leftWrist.score         leftWrist.score 1.5260309
+rightHip.score           rightHip.score 1.5129340
+rightShoulder.score rightShoulder.score 1.5011299
+leftKnee.score           leftKnee.score 1.3962483
+leftHip.y                     leftHip.y 1.3650235
+leftEye.y                     leftEye.y 1.3610032
+leftEar.y                     leftEar.y 1.3601529
+leftHip.score             leftHip.score 1.3392451
+rightHip.y                   rightHip.y 1.3266887
+rightShoulder.y         rightShoulder.y 1.3235618
+rightElbow.score       rightElbow.score 1.2920596
+nose.score                   nose.score 1.2724977
+rightElbow.x               rightElbow.x 1.2053955
+leftAnkle.score         leftAnkle.score 1.1622683
+leftEar.score             leftEar.score 1.1506318
+rightAnkle.score       rightAnkle.score 1.0010200
+nose.y                           nose.y 0.9956682
+rightEye.score           rightEye.score 0.9109721
+score                             score 0.7916566
+[1] 297   4   1
+Confusion Matrix and Statistics
+
+          Reference
+Prediction leg pull scoop straight
+  leg       68    2     6        6
+  pull       7   28     7        8
+  scoop      8    3    66        5
+  straight  12    7    10       54
+
+Overall Statistics
+                                          
+               Accuracy : 0.7273          
+                 95% CI : (0.6728, 0.7771)
+    No Information Rate : 0.3199          
+    P-Value [Acc > NIR] : <2e-16          
+                                          
+                  Kappa : 0.6302          
+                                          
+ Mcnemar's Test P-Value : 0.2104          
+
+Statistics by Class:
+
+                     Class: leg Class: pull Class: scoop Class: straight
+Sensitivity              0.7158     0.70000       0.7416          0.7397
+Specificity              0.9307     0.91440       0.9231          0.8705
+Pos Pred Value           0.8293     0.56000       0.8049          0.6506
+Neg Pred Value           0.8744     0.95142       0.8930          0.9112
+Prevalence               0.3199     0.13468       0.2997          0.2458
+Detection Rate           0.2290     0.09428       0.2222          0.1818
+Detection Prevalence     0.2761     0.16835       0.2761          0.2795
+Balanced Accuracy        0.8232     0.80720       0.8323          0.8051
