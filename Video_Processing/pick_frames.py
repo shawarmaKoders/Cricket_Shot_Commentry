@@ -1,11 +1,13 @@
 import numpy as np
+import os
 import cv2
 
 shotType = 'straight'
-for video_number in range(1, 30):
+for video_number in range(1, 5):
     print('------------------------------------------')
     print('------------------------------------------')
-    video_file = f'clips/{shotType}/{shotType}{video_number}.mp4'
+    filename = f'{shotType}{video_number}.mp4'
+    video_file = os.path.join('clips', shotType, filename)
     print(video_file)
 
     video = cv2.VideoCapture(video_file)
