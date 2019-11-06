@@ -23,6 +23,8 @@ def merge_audio_video(audio_file: str, video_file: str):
 
 def save_audio_video_file(video_clip: VideoFileClip, output_dir='final_ouput', filename=None):
     if not filename:
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
         time_string = time.strftime("%Y%m%d_%H%M%S") + '.mp4'
         write_file_path = os.path.join(output_dir, time_string)
     else:
@@ -35,4 +37,4 @@ def save_audio_video_file(video_clip: VideoFileClip, output_dir='final_ouput', f
 shot = 'pull'
 shot_number = 1
 out_vid = merge_audio_video('test_audio.mp3', f'clips/{shot}/{shot}{shot_number}.mp4')
-save_audio_video_file(out_vid, filename='abc.mp4')
+save_audio_video_file(out_vid)
