@@ -11,12 +11,13 @@ def convert_video_to_audio(video_file: str):
 
 
 def merge_audio_video(audio_file: str, video_file: str):
-    # import pdb
-    # pdb.set_trace()
     audio_clip = AudioFileClip(audio_file)
-    video_clip = VideoFileClip(video_file, audio=False)
+    video_clip = VideoFileClip(video_file)
 
-    video_clip.set_audio(audio_clip)
+    # audio_clip.duration = video_clip.duration
+    audio_clip = audio_clip.subclip(0, video_clip.duration)
+    video_clip.audio = audio_clip
+
     return video_clip
 
 
@@ -31,7 +32,7 @@ def save_audio_video_file(video_clip: VideoFileClip, output_dir='final_ouput', f
 
 
 # convert_video_to_audio('test_audio.mp4')
-shot = 'straight'
-shot_number = 2
+shot = 'pull'
+shot_number = 1
 out_vid = merge_audio_video('test_audio.mp3', f'clips/{shot}/{shot}{shot_number}.mp4')
 save_audio_video_file(out_vid, filename='abc.mp4')
