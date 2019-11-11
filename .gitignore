@@ -102,7 +102,12 @@ venv.bak/
 .Rhistory
 .RHistory
 **/.RData
+
 # mypy
 .mypy_cache/
 
+/node_modules/
 **/node_modules
+
+.idea/
+
