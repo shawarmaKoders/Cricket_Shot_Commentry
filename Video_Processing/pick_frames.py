@@ -1,5 +1,6 @@
 from pandas import DataFrame, concat
 from numpy import rot90
+import subprocess
 import os
 import cv2
 import sys
@@ -83,3 +84,7 @@ if __name__ == "__main__":
 
     video.release()
     cv2.destroyAllWindows()
+
+    r_model_path = os.path.join('..', 'CNN', 'load_model.R')
+    print('R Model Path:', r_model_path)
+    r_model_execution = subprocess.Popen(['Rscript', r_model_path, video_name])

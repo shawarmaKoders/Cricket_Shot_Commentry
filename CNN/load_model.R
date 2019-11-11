@@ -17,7 +17,7 @@ filename<-substr(filename,1,nchar(filename)-4)
 load("./ser_model.RData")
 model<-unserialize_model(ser_model, custom_objects = NULL, compile = TRUE)
 #generating data
-path<-paste("./../Video_Processing/image_frames_csvs/",filename,".csv" ,sep = "", collapse = NULL)
+path<-paste("image_frames_csvs/",filename,".csv" ,sep = "", collapse = NULL)
 print(path)
 data <- read.csv(path,header = F)
 dim(data)
@@ -51,7 +51,7 @@ pred<- model%>%predict(pred_matrix)
 
 colnames(pred) <- c('cover', 'cut', 'leg','pull','scoop','straight')
 
-path<-paste("./../Video_Processing/classification_csvs/",filename,".csv" ,sep = "", collapse = NULL)
+path<-paste("classification_csvs/",filename,".csv" ,sep = "", collapse = NULL)
 write.csv(pred,path, row.names = FALSE,)
 
 
