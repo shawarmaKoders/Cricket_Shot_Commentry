@@ -1,5 +1,5 @@
 from pandas import DataFrame, concat
-import numpy as np
+from numpy import rot90
 import os
 import cv2
 
@@ -49,7 +49,8 @@ for video_number in range(1, 2):
 
         dim = (100, 100)
         resized_gray = cv2.resize(gray, dim)
-        df_gray = DataFrame(resized_gray)
+        resized_gray_rotated = rot90(resized_gray, 3)
+        df_gray = DataFrame(resized_gray_rotated)
         if df is not None:
             df = concat([df, df_gray])
         else:
