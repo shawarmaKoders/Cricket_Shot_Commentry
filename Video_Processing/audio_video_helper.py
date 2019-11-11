@@ -1,6 +1,7 @@
 import os
 import time
 from moviepy.editor import AudioFileClip, VideoFileClip, concatenate_videoclips
+from random import choice
 
 import cv2
 
@@ -55,7 +56,8 @@ def save_audio_video_file(video_clip: VideoFileClip, output_dir='final_ouput', f
 # convert_video_to_audio('test_audio.mp4')
 shot = 'pull'
 shot_number = 1
-audio_file_number = 1
+audio_file_number = choice(list(range(1,6)))
+frame_number = 50
 out_vid = merge_audio_video(f'audio_clips/{shot}/{shot}{audio_file_number}.mpeg',
-                            f'clips/{shot}/{shot}{shot_number}.mp4', 45)
+                            f'clips/{shot}/{shot}{shot_number}.mp4', frame_number)
 save_audio_video_file(out_vid)
