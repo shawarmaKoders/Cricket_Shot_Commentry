@@ -27,7 +27,7 @@ for video_number in range(1, 2):
     print(f'Height x Width: {video_height} x {video_width}')
 
     FPS_REDUCE_FACTOR = 0.1
-    fps_delta = int(video_fps * FPS_REDUCE_FACTOR)
+    fps_delta = max(1, int(video_fps * FPS_REDUCE_FACTOR))
 
     print()
 
