@@ -1,9 +1,10 @@
+from pandas import DataFrame, concat
 import numpy as np
 import os
 import cv2
 
 shotType = 'straight'
-for video_number in range(1, 5):
+for video_number in range(1, 2):
     print('------------------------------------------')
     print('------------------------------------------')
     filename = f'{shotType}{video_number}.mp4'
@@ -25,12 +26,13 @@ for video_number in range(1, 5):
     video_width = video.get(cv2.CAP_PROP_FRAME_WIDTH)
     print(f'Height x Width: {video_height} x {video_width}')
 
-    FPS_REDUCE_FACTOR = 0.2
+    FPS_REDUCE_FACTOR = 0.1
     fps_delta = int(video_fps * FPS_REDUCE_FACTOR)
 
     print()
 
     total_frames_processed = 0
+    df = None
 
     while video.isOpened():
         current_frame_position = int(video.get(cv2.CAP_PROP_POS_FRAMES))
@@ -45,13 +47,22 @@ for video_number in range(1, 5):
         cv2.imshow(f'{shotType}', gray)
         total_frames_processed += 1
 
+        dim = (100, 100)
+        resized_gray = cv2.resize(gray, dim)
+        df_gray = DataFrame(resized_gray)
+        if df is not None:
+            df = concat([df, df_gray])
+        else:
+            df = df_gray
+
         if cv2.waitKey(1) & 0xFF == ord('q'):
-            print(frame.shape)
             break
 
         video.set(cv2.CAP_PROP_POS_FRAMES, current_frame_position + fps_delta)
 
     print('Total Frames Processed:', total_frames_processed)
+    print(df.shape)
+    df.to_csv('fname.csv')
 
     video.release()
     cv2.destroyAllWindows()
