@@ -61,8 +61,8 @@ for video_number in range(1, 2):
         video.set(cv2.CAP_PROP_POS_FRAMES, current_frame_position + fps_delta)
 
     print('Total Frames Processed:', total_frames_processed)
-    print(df.shape)
-    df.to_csv('fname.csv')
+    print(df)
+    df.to_csv('fname.csv', index=False, header=False)
 
     video.release()
     cv2.destroyAllWindows()
