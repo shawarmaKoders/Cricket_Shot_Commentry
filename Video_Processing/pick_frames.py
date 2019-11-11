@@ -77,5 +77,9 @@ if __name__ == "__main__":
     write_file_path = os.path.join(image_frame_csv_output_dir, out_csv_name)
     df.to_csv(write_file_path, index=False, header=False)
 
+    classification_csv_output_dir = 'classification_csvs'
+    if not os.path.exists(classification_csv_output_dir):
+        os.makedirs(classification_csv_output_dir)
+
     video.release()
     cv2.destroyAllWindows()
