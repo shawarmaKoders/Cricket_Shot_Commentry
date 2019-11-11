@@ -1,8 +1,0 @@
-Neural Net (Original Data, All Shots, batch_size=10, epochs=100, test_size=0.2)
-[[49  9  3  2  7 11]
- [17 51  3  4  5  4]
- [10  1 55  1  8 10]
- [10  7  3 17  4  2]
- [14  8  8  1 44  5]
- [27 10  6  2  8 23]]
-
