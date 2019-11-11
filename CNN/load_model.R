@@ -14,7 +14,7 @@ filename = args[1]
 filename<-substr(filename,1,nchar(filename)-4)
 
 #building model
-load("./model_data.RData")
+load("./ser_model.RData")
 model<-unserialize_model(ser_model, custom_objects = NULL, compile = TRUE)
 #generating data
 path<-paste("./../Video_Processing/image_frames_csvs/",filename,".csv" ,sep = "", collapse = NULL)
