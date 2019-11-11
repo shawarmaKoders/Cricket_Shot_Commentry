@@ -8,15 +8,11 @@ if __name__ == "__main__":
     print('------------------------------------------')
     print('------------------------------------------')
     try:
-        shotType = sys.argv[1]
+        video_file_name = sys.argv[1]
+        video_name = os.path.basename(video_file_name)
     except:
-        print('Expected shot directory')
-    try:
-        video_number = int(sys.argv[2])
-    except:
-        print("Expected a video number")
-    filename = f'{shotType}{video_number}.mp4'
-    video_file = os.path.join('clips', shotType, filename)
+        print('Expected video name')
+    video_file = os.path.join('video_clips', video_file_name)
     print(video_file)
 
     video = cv2.VideoCapture(video_file)
@@ -52,7 +48,7 @@ if __name__ == "__main__":
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        cv2.imshow(f'{shotType}', gray)
+        cv2.imshow(video_name, gray)
         total_frames_processed += 1
 
         dim = (100, 100)
@@ -71,11 +67,14 @@ if __name__ == "__main__":
 
     print('Total Frames Processed:', total_frames_processed)
     print(df)
-    output_dir = 'image_frames_csvs'
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    out_csv_name = f'{shotType}_{video_number}.csv'
-    write_file_path = os.path.join(output_dir, out_csv_name)
+
+    image_frame_csv_output_dir = 'image_frames_csvs'
+    if not os.path.exists(image_frame_csv_output_dir):
+        os.makedirs(image_frame_csv_output_dir)
+
+    file_name_without_ext = os.path.splitext(video_name)[0]
+    out_csv_name = f'{file_name_without_ext}.csv'
+    write_file_path = os.path.join(image_frame_csv_output_dir, out_csv_name)
     df.to_csv(write_file_path, index=False, header=False)
 
     video.release()
