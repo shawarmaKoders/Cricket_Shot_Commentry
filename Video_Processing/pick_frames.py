@@ -37,6 +37,7 @@ if __name__ == "__main__":
     print()
 
     total_frames_processed = 0
+    frames_to_cover = video_frames // 2
     df = None
 
     while video.isOpened():
@@ -60,6 +61,8 @@ if __name__ == "__main__":
             df = concat([df, df_gray])
         else:
             df = df_gray
+        if current_frame_position > frames_to_cover:
+            break
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
