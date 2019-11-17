@@ -20,13 +20,6 @@ if __name__ == '__main__':
     classification_means = classification_file_attrs.iloc[0, :]
     classification_stds = classification_file_attrs.iloc[1, :]
     classification_maxs = classification_file_attrs.iloc[6, :]
-
-    # metrics_file_name = 'ot_metrics.csv'
-    # metrics_output_dir = 'metrics'
-    # if not os.path.exists(metrics_output_dir):
-    #     os.makedirs(metrics_output_dir)
-    # metrics_file_path = os.path.join(metrics_output_dir, metrics_file_name)
-    # classification_file_attrs.to_csv(metrics_file_path)
     attributes = {}
 
     max_in_row_count = 'max_in_row_count'
@@ -58,4 +51,12 @@ if __name__ == '__main__':
         if row[max_value_field] > 0.75:
             attributes[max_value_field][max_in_row_count] += 1
 
-    pprint(attributes)
+    metrics_output_dir = 'metrics'
+    if not os.path.exists(metrics_output_dir):
+        os.makedirs(metrics_output_dir)
+
+    file_name_without_ext = os.path.splitext(classification_file_name)[0]
+    metrics_file_name = f'{file_name_without_ext}.csv'
+    metrics_file_path = os.path.join(metrics_output_dir, metrics_file_name)
+
+    DataFrame(attributes).to_csv(metrics_file_path)
