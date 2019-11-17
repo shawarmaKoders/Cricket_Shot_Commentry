@@ -12,7 +12,7 @@ if __name__ == "__main__":
         video_file_name = sys.argv[1]
         video_name = os.path.basename(video_file_name)
     except:
-        print('Expected video name')
+        print('Error: Expected video name')
     video_file = os.path.join('video_clips', video_file_name)
     print(video_file)
 

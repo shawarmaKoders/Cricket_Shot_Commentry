@@ -1,9 +1,16 @@
 from pandas import read_csv, DataFrame
 from pprint import pprint
 import os
+import sys
 
 if __name__ == '__main__':
-    classification_file = read_csv('classification_csvs/pull_1.csv')
+    try:
+        classification_file_name = sys.argv[1]
+        classification_name = os.path.basename(classification_file_name)
+    except:
+        print('Error: Expected Classification Filename')
+    classification_file_path = os.path.join('classification_csvs', classification_file_name)
+    classification_file = read_csv(classification_file_path)
     number_of_frames = classification_file.shape[0]
 
     # classification_file = classification_file.truncate(after=number_of_frames//2)
@@ -26,7 +33,7 @@ if __name__ == '__main__':
     std = 'std'
     max_value = 'max_value'
     frames_with_max_value = 'frames_with_max_value'
-    frames_to_cover = number_of_frames // 10
+    frames_to_cover = number_of_frames // 4
 
     for col in classification_file.columns:
         col_value_indexes = []
