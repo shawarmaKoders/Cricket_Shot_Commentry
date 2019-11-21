@@ -37,7 +37,7 @@ if __name__ == "__main__":
     print()
 
     total_frames_processed = 0
-    frames_to_cover = video_frames // 2
+    frames_to_cover = video_frames 
     df = None
 
     while video.isOpened():
