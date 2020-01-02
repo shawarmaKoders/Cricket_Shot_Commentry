@@ -1,0 +1,7 @@
+           temp_pred
+temp_actual cover cut leg pull scoop straight
+   cover        1   1   6    1     0        0
+   cut          4   9   0    1     1        1
+   pull         0   2   4    0     9        0
+   scoop        2   5   6    1     2        0
+   straight     7   3   3    7     0        0

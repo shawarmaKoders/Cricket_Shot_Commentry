@@ -1,14 +1,20 @@
 from pandas import DataFrame, concat
 from numpy import rot90
+import subprocess
 import os
 import cv2
+import sys
 
-shotType = 'straight'
-for video_number in range(1, 2):
+if __name__ == "__main__":
     print('------------------------------------------')
     print('------------------------------------------')
-    filename = f'{shotType}{video_number}.mp4'
-    video_file = os.path.join('clips', shotType, filename)
+    try:
+        video_file_name = sys.argv[1]
+        video_name = os.path.basename(video_file_name)
+        file_name_without_ext = os.path.splitext(video_name)[0]
+    except:
+        print('Error: Expected video name')
+    video_file = os.path.join('video_clips', video_file_name)
     print(video_file)
 
     video = cv2.VideoCapture(video_file)
@@ -32,6 +38,7 @@ for video_number in range(1, 2):
     print()
 
     total_frames_processed = 0
+    frames_to_cover = video_frames 
     df = None
 
     while video.isOpened():
@@ -44,17 +51,22 @@ for video_number in range(1, 2):
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        cv2.imshow(f'{shotType}', gray)
+        cv2.imshow(video_name, gray)
         total_frames_processed += 1
 
-        dim = (100, 100)
+        dim = (300, 300)
         resized_gray = cv2.resize(gray, dim)
+
+        #cv2.imwrite(f'new_ds/{file_name_without_ext}{current_frame_position}.jpg', resized_gray)
+
         resized_gray_rotated = rot90(resized_gray, 1)
         df_gray = DataFrame(resized_gray_rotated)
         if df is not None:
             df = concat([df, df_gray])
         else:
             df = df_gray
+        if current_frame_position > frames_to_cover:
+            break
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
@@ -63,7 +75,22 @@ for video_number in range(1, 2):
 
     print('Total Frames Processed:', total_frames_processed)
     print(df)
-    df.to_csv('fname.csv', index=False, header=False)
+
+    image_frame_csv_output_dir = 'image_frames_csvs'
+    if not os.path.exists(image_frame_csv_output_dir):
+        os.makedirs(image_frame_csv_output_dir)
+
+    out_csv_name = f'{file_name_without_ext}.csv'
+    write_file_path = os.path.join(image_frame_csv_output_dir, out_csv_name)
+    df.to_csv(write_file_path, index=False, header=False)
+
+    classification_csv_output_dir = 'classification_csvs'
+    if not os.path.exists(classification_csv_output_dir):
+        os.makedirs(classification_csv_output_dir)
 
     video.release()
     cv2.destroyAllWindows()
+
+    r_model_path = os.path.join('..', 'CNN', 'load_model.R')
+    print('R Model Path:', r_model_path)
+    r_model_execution = subprocess.Popen(['Rscript', r_model_path, video_name])

@@ -1,12 +1,25 @@
-image_width<-100;
+  image_width<-100;
 image_height<-100;
 
 
 library(reticulate)
 library(EBImage)
 library(keras)
+
+args = commandArgs(trailingOnly=TRUE)
+if (length(args)==0) {
+  stop("At least one argument must be supplied", call.=FALSE)
+}
+filename = args[1]
+filename<-substr(filename,1,nchar(filename)-4)
+
+#building model
+load("./ser_model.RData")
 model<-unserialize_model(ser_model, custom_objects = NULL, compile = TRUE)
-data <- read.csv("./../Video_Processing/fname.csv",header = F)
+#generating data
+path<-paste("image_frames_csvs/",filename,".csv" ,sep = "", collapse = NULL)
+print(path)
+data <- read.csv(path,header = F)
 dim(data)
 image_matrix<- as.matrix(data)
 image_matrix=image_matrix/255
@@ -36,8 +49,11 @@ plot(img)
 
 pred<- model%>%predict(pred_matrix)
 
-colnames(pred) <- c('cover', 'cut', 'leg','pull','scoop','straight')
+colnames(pred) <- c('leg', 'cut', 'cover','scoop','straight','pull')
 
-write.csv(pred,"./..video_processing/model_output.csv", row.names = FALSE,append = T)
+path<-paste("classification_csvs/",filename,".csv" ,sep = "", collapse = NULL)
+write.csv(pred,path, row.names = FALSE,)
+
+print("Prediction complete press enter to exit .......")
 
 
