@@ -24,13 +24,13 @@ For video and audio integration, few audio clips were generated from a app, appr
 
 # CNN Model Features
 
-At first we provide a 100x100 pixel grayscale image to our model after which, In our model we have
-A. 3, convolutional layers of 64,128 and 236 of 3x3 filter, each of which have Relu as activation
-B. 3 Max pooling layers of size 2x2 each applied after convolutional layer.
-C. 3 Dropout layers of with 0.25 parameter.
-D. 1 Flatten layer
-E. 2 Dense layers in which for one Relu activation function is used and in the other
-F. one softmax is used to get probability of each class
+At first we provide a 100x100 pixel grayscale image to our model after which, In our model we have<br />
+A. 3, convolutional layers of 64,128 and 236 of 3x3 filter, each of which have Relu as activation<br />
+B. 3 Max pooling layers of size 2x2 each applied after convolutional layer.<br />
+C. 3 Dropout layers of with 0.25 parameter.<br />
+D. 1 Flatten layer<br />
+E. 2 Dense layers in which for one Relu activation function is used and in the other<br />
+F. one softmax is used to get probability of each class<br />
 
 ![alt text](https://github.com/Puneet-Jain-18/Cricket_Shot_Commentry/blob/master/finalOutputs/CNN.png)
 
