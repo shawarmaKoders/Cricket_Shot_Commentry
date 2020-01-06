@@ -11,6 +11,7 @@ if __name__ == "__main__":
     try:
         video_file_name = sys.argv[1]
         video_name = os.path.basename(video_file_name)
+        file_name_without_ext = os.path.splitext(video_name)[0]
     except:
         print('Error: Expected video name')
     video_file = os.path.join('video_clips', video_file_name)
@@ -53,8 +54,11 @@ if __name__ == "__main__":
         cv2.imshow(video_name, gray)
         total_frames_processed += 1
 
-        dim = (100, 100)
+        dim = (300, 300)
         resized_gray = cv2.resize(gray, dim)
+
+        #cv2.imwrite(f'new_ds/{file_name_without_ext}{current_frame_position}.jpg', resized_gray)
+
         resized_gray_rotated = rot90(resized_gray, 1)
         df_gray = DataFrame(resized_gray_rotated)
         if df is not None:
@@ -76,7 +80,6 @@ if __name__ == "__main__":
     if not os.path.exists(image_frame_csv_output_dir):
         os.makedirs(image_frame_csv_output_dir)
 
-    file_name_without_ext = os.path.splitext(video_name)[0]
     out_csv_name = f'{file_name_without_ext}.csv'
     write_file_path = os.path.join(image_frame_csv_output_dir, out_csv_name)
     df.to_csv(write_file_path, index=False, header=False)

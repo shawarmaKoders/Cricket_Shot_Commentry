@@ -49,9 +49,11 @@ plot(img)
 
 pred<- model%>%predict(pred_matrix)
 
-colnames(pred) <- c('cover', 'cut', 'leg','pull','scoop','straight')
+colnames(pred) <- c('leg', 'cut', 'cover','scoop','straight','pull')
 
 path<-paste("classification_csvs/",filename,".csv" ,sep = "", collapse = NULL)
 write.csv(pred,path, row.names = FALSE,)
+
+print("Prediction complete press enter to exit .......")
 
 
